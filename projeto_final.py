@@ -16,21 +16,11 @@ class Pagina():
         self.poster_url = poster
         self.preco = preco
         self.trailer_url = trailer
-#    def __init__(self, precos, jogos, descricao, cadastro):
-#        self.precos = precos
-#        self.jogos = jogos
-#        self.descricao = descricao
-#        self.cadastro = cadastro
-#        
-#    def mostrar_precos(self):
-#        
-#    
-#    def titulo_jogos(self):
-#        
-#    
-#    def mostrar_descricao(self):
-#        
-#    
-#    def fazer_cadastro(self):
+
         
+    def show_trailer(self):
+        webbrowser.open(self.trailer_url)
+        
+        
+
         
