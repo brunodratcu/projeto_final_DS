@@ -11,26 +11,39 @@ import webbrowser
 class Pagina:
     """Classe que irá abrir uma pagina para mostrar dados de jogos"""   
     
-    def __init__(self, busca, titulo, descricao):
+    def __init__(self, busca, titulo, descricao, preco, trailer):
         self.busca = busca
         self.titulo = titulo
         self.descricao = descricao
+        self.preco = preco
+        self.trailer = trailer
 
     def buscar(self):
         self.busca = True
         
-    def titulo(self):
+    def show_titulo(self):
         if self.busca:
             print(self.titulo)
         
-    def descricao(self):
+    def show_descricao(self):
         if self.titulo:
             print(self.descricao)
+    
+    def show_preco(self):
+        if self.titulo:
+            print(self.preco)
+            
+    def show_trailer(self):
+        if self.titulo:
+            print(webbrowser.open_new("https://www.youtube.com/watch?v=VjZ5tgjPVfU"))
         
 
-gta = Pagina(True, "GTA", "blablabla")
+
+gta = Pagina(True, "GTA", "blablabla", "R$200,00","pipoca")
 print(gta.titulo)
 print(gta.descricao)
+print(gta.preco)
+print(gta.trailer)
     
 #    def ___init__(self, busca, titulo, descricao, poster, preco, trailer):
 #        self.busca = busca
