@@ -8,7 +8,7 @@ Created on Wed Apr 20 11:34:01 2016
 import webbrowser
 
 
-class Pagina():
+class Pagina:
     """Classe que irá abrir uma pagina para mostrar dados de jogos"""   
     
     def __init__(self, busca, titulo, descricao):
@@ -28,7 +28,9 @@ class Pagina():
             print(self.descricao)
         
 
-GTA = Pagina(True, "GTA", "blablabla")
+gta = Pagina(True, "GTA", "blablabla")
+print(gta.titulo)
+print(gta.descricao)
     
 #    def ___init__(self, busca, titulo, descricao, poster, preco, trailer):
 #        self.busca = busca
