@@ -37,83 +37,44 @@ class Pagina:
     def show_trailer(self):
         if self.titulo:
             webbrowser.open(self.trailer)
-#            print(mostrar_video)
             
     def show_poster(self):
         if self.titulo:
-            webbrowser.open_new_tab(self.poster)
-#            print(mostrar_poster)
-            
-#mostrar_video = webbrowser.open("https://www.youtube.com/watch?v=VjZ5tgjPVfU")
-#mostrar_poster = webbrowser.open("http://cdn.atl.clicrbs.com.br/wp-content/uploads/sites/27/2015/04/actual_1410520494.jpg")
-        
+            webbrowser.open(self.poster)
 
 
-gta = Pagina(True, "GTA", "blablabla", "R$200,00", "https://www.youtube.com/watch?v=VjZ5tgjPVfU", "http://cdn.atl.clicrbs.com.br/wp-content/uploads/sites/27/2015/04/actual_1410520494.jpg")
-#gta = Pagina(True, "GTA", "blablabla", "R$200,00", "mostrar video...", "mostrar poster...")
-#print(gta.titulo)
-#print(gta.descricao)
-#print(gta.preco)
-#print(gta.trailer)
-#print(gta.poster)
-#gta.show_trailer()
+
+gta = Pagina(True, 
+             "GTA", 
+             "Jogo de um maniaco que mata todo mundo", 
+             "R$200,00", 
+             "https://www.youtube.com/watch?v=VjZ5tgjPVfU", 
+             "http://cdn.atl.clicrbs.com.br/wp-content/uploads/sites/27/2015/04/actual_1410520494.jpg")
+
+mario_bros = Pagina(True,
+                    "Super Mario Bros",
+                    "Jogo de um encanador psicodelico", 
+                    "R$150,00",
+                    "https://i.ytimg.com/vi/1dhrHlol3SM/maxresdefault.jpg",
+                    "https://www.youtube.com/watch?v=eO8xe2AUY4c")
+
+print(gta.titulo)
+print(gta.descricao)
+print(gta.preco)
+print(gta.trailer)
+print(gta.poster)
+gta.show_trailer()
+gta.show_trailer
 gta.show_poster()
-    
-#    def ___init__(self, busca, titulo, descricao, poster, preco, trailer):
-#        self.busca = busca
-#        self.titulo = titulo
-#        self.descricao = descricao
-#        self.poster_url = poster
-#        self.preco = preco
-#        self.trailer_url = trailer
-#        
-#    def buscar(self):
-#        self.busca = True
-#        
-#    def show_titulo(self):
-#        if self.busca:
-#            print(self.titulo)
-#            
-#    def show_poster(self):
-#        if self.titulo:
-#            print(self.poster_url)
-#            
-#    def show_descricao(self):
-#        if self.poster_url:
-#            print(self.descricao)
-#            print(self.preco)
-#            print(webbrowser.open("self.trailer_url"))
-#        
-#        
-##gta_poster = webbrowser.open("http://cdn.atl.clicrbs.com.br/wp-content/uploads/sites/27/2015/04/actual_1410520494.jpg")
-##gta_trailer = webbrowser.open("https://www.youtube.com/watch?v=VjZ5tgjPVfU")
-##
-##mario_poster = webbrowser.open("https://i.ytimg.com/vi/1dhrHlol3SM/maxresdefault.jpg")
-##mario_trailer = webbrowser.open("https://www.youtube.com/watch?v=eO8xe2AUY4c")
-#
-#
-##gta = Pagina(True, 
-##             "GTA", 
-##             "Jogo que mata pessoas",
-##             "http://cdn.atl.clicrbs.com.br/wp-content/uploads/sites/27/2015/04/actual_1410520494.jpg"
-##             "R$200,00", 
-##             "https://www.youtube.com/watch?v=VjZ5tgjPVfU")
-#gta = Pagina(True, "GTA", "Jogo que mata pessoas", "", "R$200,00", "")
-#
-#                           
-#print(gta.titulo)
-#print(gta.descricao)
-##print(gta.poster_url)
-#print(gta.preco)
-##print(gta.trailer_url)
-#
-##mario_bros = Pagina("Super Mario Bros", 
-##                    "Jogo de um encanador psicodelico", 
-###                    "mario_poster", 
-##                    "https://i.ytimg.com/vi/1dhrHlol3SM/maxresdefault.jpg"
-##                    "R$150,00", 
-###                    "mario_trailer")
-##                    "https://www.youtube.com/watch?v=eO8xe2AUY4c")
-##                    
-##                    
-##print(mario_bros)
+
+print()
+
+print(mario_bros.titulo)
+print(mario_bros.descricao)
+print(mario_bros.preco)
+print(mario_bros.trailer)
+print(mario_bros.poster)
+mario_bros.show_trailer()
+mario_bros.show_trailer
+mario_bros.show_poster()    
+
