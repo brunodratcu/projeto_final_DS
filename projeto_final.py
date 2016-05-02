@@ -7,57 +7,84 @@ Created on Wed Apr 20 11:34:01 2016
 
 import webbrowser
 
+
 class Pagina():
-    """Classe que irá abrir uma pagina para mostrar dados de jogos"""
+    """Classe que irá abrir uma pagina para mostrar dados de jogos"""   
     
-    def ___init__(self, title, descricao, poster, preco, trailer):
-        self.title = title
+    def __init__(self, busca, titulo, descricao):
+        self.busca = busca
+        self.titulo = titulo
         self.descricao = descricao
-        self.poster_url = poster
-        self.preco = preco
-        self.trailer_url = trailer
-        
-    def show_title(self):
-        if self.title:
-            print(self.poster_url)
-            
-    def show_descricao(self):
-        if self.poster_url:
-            def abre_pagina():
-                print(self.descricao)
-                print(self.preco)
 
+    def buscar(self):
+        self.busca = True
         
-    def show_trailer(self):
-        if self.trailer_url:
-            print(webbrowser.open("self.trailer_url"))
+    def titulo(self):
+        if self.busca:
+            print(self.titulo)
         
+    def descricao(self):
+        if self.titulo:
+            print(self.descricao)
         
-        
-#gta_poster = webbrowser.open("http://cdn.atl.clicrbs.com.br/wp-content/uploads/sites/27/2015/04/actual_1410520494.jpg")
-#gta_trailer = webbrowser.open("https://www.youtube.com/watch?v=VjZ5tgjPVfU")
+
+GTA = Pagina(True, "GTA", "blablabla")
+    
+#    def ___init__(self, busca, titulo, descricao, poster, preco, trailer):
+#        self.busca = busca
+#        self.titulo = titulo
+#        self.descricao = descricao
+#        self.poster_url = poster
+#        self.preco = preco
+#        self.trailer_url = trailer
+#        
+#    def buscar(self):
+#        self.busca = True
+#        
+#    def show_titulo(self):
+#        if self.busca:
+#            print(self.titulo)
+#            
+#    def show_poster(self):
+#        if self.titulo:
+#            print(self.poster_url)
+#            
+#    def show_descricao(self):
+#        if self.poster_url:
+#            print(self.descricao)
+#            print(self.preco)
+#            print(webbrowser.open("self.trailer_url"))
+#        
+#        
+##gta_poster = webbrowser.open("http://cdn.atl.clicrbs.com.br/wp-content/uploads/sites/27/2015/04/actual_1410520494.jpg")
+##gta_trailer = webbrowser.open("https://www.youtube.com/watch?v=VjZ5tgjPVfU")
+##
+##mario_poster = webbrowser.open("https://i.ytimg.com/vi/1dhrHlol3SM/maxresdefault.jpg")
+##mario_trailer = webbrowser.open("https://www.youtube.com/watch?v=eO8xe2AUY4c")
 #
-#mario_poster = webbrowser.open("https://i.ytimg.com/vi/1dhrHlol3SM/maxresdefault.jpg")
-#mario_trailer = webbrowser.open("https://www.youtube.com/watch?v=eO8xe2AUY4c")
-
-
-GTA = Pagina("GTA", 
-             "Jogo que mata pessoas", 
-#             "gta_poster", 
-             webbrowser.open("http://cdn.atl.clicrbs.com.br/wp-content/uploads/sites/27/2015/04/actual_1410520494.jpg"),
-             "R$200,00", 
-#             "gta_trailer")
-             webbrowser.open("https://www.youtube.com/watch?v=VjZ5tgjPVfU"))
-                           
-print(GTA)
-
-mario_bros = Pagina("Super Mario Bros", 
-                    "Jogo de um encanador psicodelico", 
-#                    "mario_poster", 
-                    "https://i.ytimg.com/vi/1dhrHlol3SM/maxresdefault.jpg"
-                    "R$150,00", 
-#                    "mario_trailer")
-                    "https://www.youtube.com/watch?v=eO8xe2AUY4c")
-                    
-                    
-print(mario_bros)
+#
+##gta = Pagina(True, 
+##             "GTA", 
+##             "Jogo que mata pessoas",
+##             "http://cdn.atl.clicrbs.com.br/wp-content/uploads/sites/27/2015/04/actual_1410520494.jpg"
+##             "R$200,00", 
+##             "https://www.youtube.com/watch?v=VjZ5tgjPVfU")
+#gta = Pagina(True, "GTA", "Jogo que mata pessoas", "", "R$200,00", "")
+#
+#                           
+#print(gta.titulo)
+#print(gta.descricao)
+##print(gta.poster_url)
+#print(gta.preco)
+##print(gta.trailer_url)
+#
+##mario_bros = Pagina("Super Mario Bros", 
+##                    "Jogo de um encanador psicodelico", 
+###                    "mario_poster", 
+##                    "https://i.ytimg.com/vi/1dhrHlol3SM/maxresdefault.jpg"
+##                    "R$150,00", 
+###                    "mario_trailer")
+##                    "https://www.youtube.com/watch?v=eO8xe2AUY4c")
+##                    
+##                    
+##print(mario_bros)
