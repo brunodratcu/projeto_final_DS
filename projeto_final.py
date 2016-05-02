@@ -36,23 +36,28 @@ class Pagina:
             
     def show_trailer(self):
         if self.titulo:
-            print(mostrar_video)
+            webbrowser.open(self.trailer)
+#            print(mostrar_video)
             
     def show_poster(self):
         if self.titulo:
-            print(mostrar_poster)
+            webbrowser.open_new_tab(self.poster)
+#            print(mostrar_poster)
             
-mostrar_video = webbrowser.open("https://www.youtube.com/watch?v=VjZ5tgjPVfU")
-mostrar_poster = webbrowser.open("http://cdn.atl.clicrbs.com.br/wp-content/uploads/sites/27/2015/04/actual_1410520494.jpg")
+#mostrar_video = webbrowser.open("https://www.youtube.com/watch?v=VjZ5tgjPVfU")
+#mostrar_poster = webbrowser.open("http://cdn.atl.clicrbs.com.br/wp-content/uploads/sites/27/2015/04/actual_1410520494.jpg")
         
 
 
-gta = Pagina(True, "GTA", "blablabla", "R$200,00", "mostrar video...", "mostrar poster...")
-print(gta.titulo)
-print(gta.descricao)
-print(gta.preco)
-print(gta.trailer)
-print(gta.poster)
+gta = Pagina(True, "GTA", "blablabla", "R$200,00", "https://www.youtube.com/watch?v=VjZ5tgjPVfU", "http://cdn.atl.clicrbs.com.br/wp-content/uploads/sites/27/2015/04/actual_1410520494.jpg")
+#gta = Pagina(True, "GTA", "blablabla", "R$200,00", "mostrar video...", "mostrar poster...")
+#print(gta.titulo)
+#print(gta.descricao)
+#print(gta.preco)
+#print(gta.trailer)
+#print(gta.poster)
+#gta.show_trailer()
+gta.show_poster()
     
 #    def ___init__(self, busca, titulo, descricao, poster, preco, trailer):
 #        self.busca = busca
