@@ -35,11 +35,13 @@ class Pagina:
             
     def show_trailer(self):
         if self.titulo:
-            print(webbrowser.open_new("https://www.youtube.com/watch?v=VjZ5tgjPVfU"))
+            print(mostrar_video)
+            
+mostrar_video = webbrowser.open("https://www.youtube.com/watch?v=VjZ5tgjPVfU")
         
 
 
-gta = Pagina(True, "GTA", "blablabla", "R$200,00","pipoca")
+gta = Pagina(True, "GTA", "blablabla", "R$200,00", "mostrar video...")
 print(gta.titulo)
 print(gta.descricao)
 print(gta.preco)
