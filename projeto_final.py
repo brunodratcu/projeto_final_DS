@@ -6,6 +6,8 @@ Created on Wed Apr 20 11:34:01 2016
 """
 
 import webbrowser
+import projeto_final_2
+
 
 
 class Pagina:
@@ -71,7 +73,7 @@ print(gta.titulo)
 #print(gta.trailer)
 #print(gta.poster)
 #gta.show_trailer()
-gta.show_poster()
+#gta.show_poster()
 
 print()
 
@@ -81,7 +83,7 @@ print(mario_bros.titulo)
 #print(mario_bros.trailer)
 #print(mario_bros.poster)
 #mario_bros.show_trailer()
-mario_bros.show_poster()
+#mario_bros.show_poster()
 
 print()
 
@@ -91,7 +93,9 @@ print(pac_man.titulo)
 #print(pac_man.trailer)
 #print(pac_man.poster)
 #pac_man.show_trailer()
-pac_man.show_poster()
+#pac_man.show_poster()
 
     
-
+    
+jogos = [gta, mario_bros, pac_man]
+projeto_final_2.open_movies_page(jogos)
