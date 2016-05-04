@@ -8,7 +8,7 @@ main_page_head = '''
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Fresh Tomatoes!</title>
+    <title>É 13 GAMES MEMU</title>
     <!-- Bootstrap 3 -->
     <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap-theme.min.css">
@@ -149,7 +149,7 @@ def create_movie_tiles_content(jogos):
 
 def open_movies_page(jogos):
     # Create or overwrite the output file
-    output_file = open('fresh_tomatoes.html', 'w')
+    output_file = open('GAMES_MALUCOS.html', 'w')
 
     # Replace the movie tiles placeholder generated content
     rendered_content = main_page_content.format(
