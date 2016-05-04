@@ -59,8 +59,8 @@ class Pagina:
             print("Jogo não encontrado!")
             
             
-            
 nomes_jogos = input("Qual o game desejado? ")
+
 
 gta = Pagina(True, 
              "GTA", 
@@ -93,10 +93,19 @@ call_of_duty = Pagina(True,
                       "https://www.youtube.com/watch?v=ktz5G24BOsg",
                       "http://cdn2-www.comingsoon.net/assets/uploads/2015/04/cod-bo3-header2.jpg",
                       True)
-                    
-#print(gta.titulo)
-#print(gta.descricao)
-#print(gta.preco)
+                      
+                      
+gta.show_buscar_jogos()
+mario_bros.show_buscar_jogos()
+pac_man.show_buscar_jogos()
+call_of_duty.show_buscar_jogos()
+
+print()
+                      
+
+print(gta.titulo)
+print(gta.descricao)
+print(gta.preco)
 #print(gta.trailer)
 #print(gta.poster)
                     
@@ -105,9 +114,9 @@ call_of_duty = Pagina(True,
 
 print()
 
-#print(mario_bros.titulo)
-#print(mario_bros.descricao)
-#print(mario_bros.preco)
+print(mario_bros.titulo)
+print(mario_bros.descricao)
+print(mario_bros.preco)
 #print(mario_bros.trailer)
 #print(mario_bros.poster)
 
@@ -116,9 +125,9 @@ print()
 
 print()
 
-#print(pac_man.titulo)
-#print(pac_man.descricao)
-#print(pac_man.preco)
+print(pac_man.titulo)
+print(pac_man.descricao)
+print(pac_man.preco)
 #print(pac_man.trailer)
 #print(pac_man.poster)
 
@@ -127,14 +136,15 @@ print()
 
 print()
 
-#print(call_of_duty.titulo)
-#print(call_of_duty.descricao)
-#print(call_of_duty.preco)
+print(call_of_duty.titulo)
+print(call_of_duty.descricao)
+print(call_of_duty.preco)
 #print(call_of_duty.trailer)
 #print(call_of_duty.poster)
 
 #call_of_duty.show_trailer()
 #call_of_duty.show_poster()
+
     
     
 jogos = [gta, mario_bros, pac_man, call_of_duty]
