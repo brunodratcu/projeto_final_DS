@@ -26,14 +26,15 @@ class Pagina:
         self.games = True
         
     def show_titulo(self):
-        if self.busca:
+        if self.games:
             print(self.titulo)
         
     def show_descricao(self):
         if self.titulo:
             print(self.descricao)
-        if self.buscar_jogos:
-            print(self.descricao)
+#        if self.buscar_jogos:
+#            print(self.descricao)
+#            webbrowser.open(self.preco)
     
     def show_preco(self):
         if self.titulo:
@@ -47,18 +48,17 @@ class Pagina:
         if self.titulo:
             webbrowser.open(self.poster)
             
-    def show_buscar_jogos(self):
-        self.buscar_jogos = True
-        if nomes_jogos == "GTA" or nomes_jogos == "gta":
-            gta.show_descricao()
-        elif nomes_jogos == "Mario Bros" or nomes_jogos == "mario bros":
-            mario_bros.show_descricao()
-        elif nomes_jogos == "pac man" or nomes_jogos == "Pac Man" or nomes_jogos == "Pac-Man":
-            pac_man.show_descricao()
-        elif nomes_jogos == "call of duty" or nomes_jogos == "Call of Duty":
-            call_of_duty.show_descricao()
-        else:
-            print("Jogo não encontrado!")
+def show_buscar_jogos():
+    if nomes_jogos == "GTA" or nomes_jogos == "gta":
+        gta.show_descricao()
+    elif nomes_jogos == "Mario Bros" or nomes_jogos == "mario bros":
+        mario_bros.show_descricao()
+    elif nomes_jogos == "pac man" or nomes_jogos == "Pac Man" or nomes_jogos == "Pac-Man":
+        pac_man.show_descricao()
+    elif nomes_jogos == "call of duty" or nomes_jogos == "Call of Duty":
+        call_of_duty.show_descricao()
+    else:
+        print("Jogo não encontrado!")
             
             
 nomes_jogos = input("Qual o game desejado? ")
@@ -97,10 +97,7 @@ call_of_duty = Pagina(True,
                       True)
                       
                       
-gta.show_buscar_jogos()
-mario_bros.show_buscar_jogos()
-pac_man.show_buscar_jogos()
-call_of_duty.show_buscar_jogos()
+show_buscar_jogos()
 
 #print()
 #                      
