@@ -49,19 +49,19 @@ class Pagina:
             
     def show_buscar_jogos(self):
         self.buscar_jogos = True
-        if nomes_jogos == "GTA" or nomes_jogos == "gta":
+        if nomes_jogos == "GTA":
             gta.show_descricao()
-        elif nomes_jogos == "Mario Bros" or nomes_jogos == "mario bros":
+        elif nomes_jogos == "MARIO BROS":
             mario_bros.show_descricao()
-        elif nomes_jogos == "pac man" or nomes_jogos == "Pac Man" or nomes_jogos == "Pac-Man":
+        elif nomes_jogos == "PAC MAN":
             pac_man.show_descricao()
-        elif nomes_jogos == "call of duty" or nomes_jogos == "Call of Duty":
+        elif nomes_jogos == "CALL OF DUTTY":
             call_of_duty.show_descricao()
         else:
             print("Jogo não encontrado!")
             
             
-nomes_jogos = input("Qual o game desejado? ")
+nomes_jogos = str.upper(input("Qual o game desejado? "))
 
 
 gta = Pagina(True, 
