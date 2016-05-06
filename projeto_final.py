@@ -32,9 +32,7 @@ class Pagina:
     def show_descricao(self):
         if self.titulo:
             print(self.descricao)
-#        if self.buscar_jogos:
-#            print(self.descricao)
-#            webbrowser.open(self.preco)
+            webbrowser.open(self.preco)
     
     def show_preco(self):
         if self.titulo:
