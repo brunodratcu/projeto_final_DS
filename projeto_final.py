@@ -13,14 +13,13 @@ import projeto_final_2
 class Pagina:
     """Classe que irá abrir uma pagina para mostrar dados de jogos"""   
     
-    def __init__(self, games, titulo, descricao, preco, trailer, poster, buscar_jogos):
+    def __init__(self, games, titulo, descricao, preco, trailer, poster):
         self.games = games
         self.titulo = titulo
         self.descricao = descricao
         self.preco = preco
         self.trailer = trailer
         self.poster = poster
-        self.buscar_jogos = buscar_jogos
 
     def show_games(self):
         self.games = True
@@ -67,32 +66,28 @@ gta = Pagina(True,
              "Jogo de um maniaco que mata todo mundo", 
              "http://www.uzgames.com.br/gta?&utmi_p=_games&utmi_pc=BuscaFullText&utmi_cp=gta", 
              "https://www.youtube.com/watch?v=VjZ5tgjPVfU", 
-             "http://cdn.atl.clicrbs.com.br/wp-content/uploads/sites/27/2015/04/actual_1410520494.jpg",
-             True)
+             "http://cdn.atl.clicrbs.com.br/wp-content/uploads/sites/27/2015/04/actual_1410520494.jpg")
 
 mario_bros = Pagina(True,
                     "Super Mario Bros",
                     "Jogo de um encanador psicodelico", 
                     "http://www.uzgames.com.br/mario%20bros?&utmi_p=_gta&utmi_pc=BuscaFullText&utmi_cp=mario%20bros",
                     "https://www.youtube.com/watch?v=eO8xe2AUY4c",
-                    "https://i.ytimg.com/vi/1dhrHlol3SM/maxresdefault.jpg",
-                    True)
+                    "https://i.ytimg.com/vi/1dhrHlol3SM/maxresdefault.jpg")
                     
 pac_man = Pagina(True,
                  "Pac-Man",
                  "Bolinha amarela que fica numa sala escura e quando come um doce tem poderes para comer fantasmas",
                  "http://www.uzgames.com.br/pac%20man?&utmi_p=_gta&utmi_pc=BuscaFullText&utmi_cp=pac%20man",
                  "https://www.youtube.com/watch?v=CFWnTu_42d0",
-                 "http://www.redefonte.com/wp-content/uploads/2013/06/Pacman-Online.jpg",
-                 True)
+                 "http://www.redefonte.com/wp-content/uploads/2013/06/Pacman-Online.jpg")
                  
 call_of_duty = Pagina(True,
                       "Call of Duty",
                       "Jogo no qual vc pode atirar em outros usuarios online",
                       "http://www.uzgames.com.br/call%20of%20duty%20ghosts?&utmi_p=_call+of+duty+gosth&utmi_pc=BuscaFullText&utmi_cp=call%20of%20duty%20ghosts",
                       "https://www.youtube.com/watch?v=ktz5G24BOsg",
-                      "http://cdn2-www.comingsoon.net/assets/uploads/2015/04/cod-bo3-header2.jpg",
-                      True)
+                      "http://cdn2-www.comingsoon.net/assets/uploads/2015/04/cod-bo3-header2.jpg")
                       
                       
 show_buscar_jogos()
