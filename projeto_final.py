@@ -91,7 +91,10 @@ call_of_duty = Pagina(True,
                       
                       
 show_buscar_jogos()
-jogos = {"gta":"" , "mario_bros":"" , "pac_man":"" , "call_of_duty":"" }
+jogos = {"gta":{"preco":"show_preco", "descricao":"show_descricao"} , 
+         "mario_bros":{"preco":"show_preco", "descricao":"show_descricao"} , 
+         "pac_man":{"preco":"show_preco", "descricao":"show_descricao"} , 
+         "call_of_duty":{"preco":"show_preco", "descricao":"show_descricao"} }
 
 #print()
 #                      
