@@ -54,6 +54,13 @@ def show_buscar_jogos():
         pac_man.show_descricao()
     elif nomes_jogos == "call of duty" or nomes_jogos == "Call of Duty":
         call_of_duty.show_descricao()
+    elif nomes_jogos == "battlefield" or nomes_jogos == "Battlefield":
+        battlefield.show_descricao()
+    elif nomes_jogos == "Pokemon" or nomes_jogos == "pokemon":
+        pokemon.show_descricao()
+    elif nomes_jogos == "fifa" or nomes_jogos == "Fifa":
+        fifa.show_descricao()
+    
     else:
         print("Jogo não encontrado!")
             
@@ -88,13 +95,40 @@ call_of_duty = Pagina(True,
                       "http://www.uzgames.com.br/call%20of%20duty%20ghosts?&utmi_p=_call+of+duty+gosth&utmi_pc=BuscaFullText&utmi_cp=call%20of%20duty%20ghosts",
                       "https://www.youtube.com/watch?v=ktz5G24BOsg",
                       "http://cdn2-www.comingsoon.net/assets/uploads/2015/04/cod-bo3-header2.jpg")
-                      
+  
+
+battlefield = Pagina(True,
+                     "Battlefield 4",
+                     "Jogo de guerra e tiros",
+                     "http://www.uzgames.com.br/battlefield%204?&utmi_p=_battlefield4edicaolimitadabrps3_p&utmi_pc=BuscaFullText&utmi_cp=battlefield%204",
+                     "https://www.youtube.com/watch?v=sclTMEd7JN8",
+                     "http://static1.gamespot.com/uploads/screen_kubrick/398/3983642/2358171-nowplaying_battlefield4_release_20131029.jpg")
+                    
+                    
+pokemon = Pagina(True,
+                 "Pokemon",
+                 "Jogo de 'pets' com poderes que são guardados dentro de bolinhas para batalhas",
+                 "http://www.uzgames.com.br/pokemon?&utmi_p=_Sistema_buscavazia&utmi_pc=BuscaFullText&utmi_cp=pokemon",
+                 "https://www.youtube.com/watch?v=TexwX1bBViI",
+                 "https://i.ytimg.com/vi/RpFxf3b_u8A/maxresdefault.jpg")   
+
+
+fifa = Pagina(True,
+              "Fifa 2016",
+              "Jogo de futebol famoso",
+              "http://www.uzgames.com.br/fifa?&utmi_p=_games&utmi_pc=BuscaFullText&utmi_cp=fifa",
+              "https://www.youtube.com/watch?v=ItKkL4UFVOg",
+              "http://upgeek.com.br/wp-content/uploads/2015/09/fifa-16.jpg")                 
+                    
                       
 show_buscar_jogos()
 jogos = {"gta":{"preco":"show_preco", "descricao":"show_descricao"} , 
          "mario_bros":{"preco":"show_preco", "descricao":"show_descricao"} , 
          "pac_man":{"preco":"show_preco", "descricao":"show_descricao"} , 
-         "call_of_duty":{"preco":"show_preco", "descricao":"show_descricao"} }
+         "call_of_duty":{"preco":"show_preco", "descricao":"show_descricao"},
+         "battlefiel":{"preco":"show_preco", "descricao":"show_descricao"},
+         "pokemon":{"preco":"show_preco", "descricao":"show_descricao"},
+         "fifa":{"preco":"show_preco", "descricao":"show_descricao"}}
 
 #print()
 #                      
