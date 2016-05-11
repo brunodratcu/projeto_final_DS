@@ -91,6 +91,7 @@ call_of_duty = Pagina(True,
                       
                       
 show_buscar_jogos()
+jogos = {"gta":"" , "mario_bros":"" , "pac_man":"" , "call_of_duty":"" }
 
 #print()
 #                      
@@ -143,5 +144,5 @@ show_buscar_jogos()
 
     
     
-jogos = [gta, mario_bros, pac_man, call_of_duty]
+
 #projeto_final_2.open_movies_page(jogos)
