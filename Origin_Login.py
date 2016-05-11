@@ -7,7 +7,7 @@ Created on Fri May  6 18:55:19 2016
 
 import pickle
 
-cadastros = {"Gabriel": "123","Felipe":"1234"}
+cadastros = {"Gabriel": "123","Felipe":"1234","Bruno": "12345"}
 
 database = open("cadastros.data", "wb")
 
