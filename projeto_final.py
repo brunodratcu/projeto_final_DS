@@ -60,7 +60,12 @@ def show_buscar_jogos():
         pokemon.show_descricao()
     elif nomes_jogos == "fifa" or nomes_jogos == "Fifa":
         fifa.show_descricao()
-    
+    elif nomes_jogos == "Mario Kart" or nomes_jogos == "mario kart":
+        mario_kart.show_descricao()
+    elif nomes_jogos == "need for speed" or nomes_jogos == "Need for Speed":
+        need_for_speed.show_descricao()
+    elif nomes_jogos == "Street Fighter" or nomes_jogos == "street fighter":
+        street_fighter.show_descricao()
     else:
         print("Jogo não encontrado!")
             
@@ -118,7 +123,28 @@ fifa = Pagina(True,
               "Jogo de futebol famoso",
               "http://www.uzgames.com.br/fifa?&utmi_p=_games&utmi_pc=BuscaFullText&utmi_cp=fifa",
               "https://www.youtube.com/watch?v=ItKkL4UFVOg",
-              "http://upgeek.com.br/wp-content/uploads/2015/09/fifa-16.jpg")                 
+              "http://upgeek.com.br/wp-content/uploads/2015/09/fifa-16.jpg")
+
+need_for_speed = Pagina(True,
+                        "Need for Speed",
+                        "Jogo de corrida muito realista",
+                        "http://www.uzgames.com.br/need%20for%20speed?&utmi_p=_mario+kart&utmi_pc=BuscaFullText&utmi_cp=need%20for%20speed",
+                        "https://www.youtube.com/watch?v=fsrJWUVoXeM",
+                        "http://tryangle.com.br/wp-content/uploads/2015/09/need_for_speed.jpg")   
+
+mario_kart = Pagina(True,
+                    "Mario Kart",
+                    "Jogo do encanador psicodelico de corrida",
+                    "http://www.uzgames.com.br/mario%20kart?&utmi_p=_&utmi_pc=BuscaFullText&utmi_cp=mario%20kart",
+                    "https://www.youtube.com/watch?v=gG1ex0AAU5c",
+                    "http://images.123hdwallpapers.com/20150513/mario-kart-backgrounds-1280x720.jpg")
+
+street_fighter = Pagina(True,
+                        "Stree Fighter",
+                        "Jogo de luta antigo com personagens malucos",
+                        "http://www.uzgames.com.br/street%20fighter?&utmi_p=_need+for+speed&utmi_pc=BuscaFullText&utmi_cp=street%20fighter",
+                        "https://www.youtube.com/watch?v=yveLaWgBTdk",
+                        "http://www.tecnologia.com.pt/wp-content/uploads/2016/03/Street-Fighter-V.jpg")              
                     
                       
 show_buscar_jogos()
@@ -128,7 +154,10 @@ jogos = {"gta":{"preco":"show_preco", "descricao":"show_descricao"} ,
          "call_of_duty":{"preco":"show_preco", "descricao":"show_descricao"},
          "battlefiel":{"preco":"show_preco", "descricao":"show_descricao"},
          "pokemon":{"preco":"show_preco", "descricao":"show_descricao"},
-         "fifa":{"preco":"show_preco", "descricao":"show_descricao"}}
+         "fifa":{"preco":"show_preco", "descricao":"show_descricao"},
+         "mario_kart":{"preco":"show_preco", "descricao":"show_descricao"},
+         "need_for_speed":{"preco":"show_preco", "descricao":"show_descricao"},
+         "street_fighter":{"preco":"show_preco", "descricao":"show_descricao"}}
 
 #print()
 #                      
