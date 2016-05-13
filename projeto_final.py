@@ -47,25 +47,45 @@ class Pagina:
             
 def show_buscar_jogos():
     if nomes_jogos == "GTA" or nomes_jogos == "gta":
+        gta.show_titulo()
         gta.show_descricao()
+        
     elif nomes_jogos == "Mario Bros" or nomes_jogos == "mario bros":
+        mario_bros.show_titulo()
         mario_bros.show_descricao()
+        
     elif nomes_jogos == "pac man" or nomes_jogos == "Pac Man" or nomes_jogos == "Pac-Man":
+        pac_man.show_titulo()
         pac_man.show_descricao()
+        
     elif nomes_jogos == "call of duty" or nomes_jogos == "Call of Duty":
+        call_of_duty.show_titulo()
         call_of_duty.show_descricao()
+        
     elif nomes_jogos == "battlefield" or nomes_jogos == "Battlefield":
+        battlefield.show_titulo()
         battlefield.show_descricao()
+        
     elif nomes_jogos == "Pokemon" or nomes_jogos == "pokemon":
+        pokemon.show_titulo()
         pokemon.show_descricao()
+        
     elif nomes_jogos == "fifa" or nomes_jogos == "Fifa":
+        fifa.show_titulo()
         fifa.show_descricao()
+        
     elif nomes_jogos == "Mario Kart" or nomes_jogos == "mario kart":
+        mario_kart.show_titulo()
         mario_kart.show_descricao()
+        
     elif nomes_jogos == "need for speed" or nomes_jogos == "Need for Speed":
+        need_for_speed.show_titulo()
         need_for_speed.show_descricao()
+        
     elif nomes_jogos == "Street Fighter" or nomes_jogos == "street fighter":
+        street_fighter.show_titulo()
         street_fighter.show_descricao()
+        
     else:
         print("Jogo não encontrado!")
             
