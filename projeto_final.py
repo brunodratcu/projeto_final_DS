@@ -6,8 +6,6 @@ Created on Wed Apr 20 11:34:01 2016
 """
 
 import webbrowser
-import projeto_final_2
-
 
 
 class Pagina:
@@ -179,56 +177,31 @@ jogos = {"gta":{"preco":"show_preco", "descricao":"show_descricao"} ,
          "need_for_speed":{"preco":"show_preco", "descricao":"show_descricao"},
          "street_fighter":{"preco":"show_preco", "descricao":"show_descricao"}}
 
-#print()
-#                      
-#
-#print(gta.titulo)
-#print(gta.descricao)
-#print(gta.preco)
-#print(gta.trailer)
-#print(gta.poster)
-#                    
-#gta.show_trailer()
-#gta.show_poster()
-#gta.show_preco()
-#
-#print()
-#
-#print(mario_bros.titulo)
-#print(mario_bros.descricao)
-#print(mario_bros.preco)
-#print(mario_bros.trailer)
-#print(mario_bros.poster)
-#
-#mario_bros.show_trailer()
-#mario_bros.show_poster()
-#mario_bros.show_preco()
-#
-#print()
-#
-#print(pac_man.titulo)
-#print(pac_man.descricao)
-#print(pac_man.preco)
-#print(pac_man.trailer)
-#print(pac_man.poster)
-#
-#pac_man.show_trailer()
-#pac_man.show_poster()
-#pac_man.show_preco()
-#
-#print()
-#
-#print(call_of_duty.titulo)
-#print(call_of_duty.descricao)
-#print(call_of_duty.preco)
-#print(call_of_duty.trailer)
-#print(call_of_duty.poster)
-#
-#call_of_duty.show_trailer()
-#call_of_duty.show_poster()
-#call_of_duty.show_preco()
+print()
+                      
 
-    
-    
+print(gta.titulo)      
+gta.show_trailer()
+gta.show_poster()
+gta.show_preco()
 
-#projeto_final_2.open_movies_page(jogos)
+print()
+
+print(mario_bros.titulo)
+mario_bros.show_trailer()
+mario_bros.show_poster()
+mario_bros.show_preco()
+
+print()
+
+print(pac_man.titulo)
+pac_man.show_trailer()
+pac_man.show_poster()
+pac_man.show_preco()
+
+print()
+
+print(call_of_duty.titulo)
+call_of_duty.show_trailer()
+call_of_duty.show_poster()
+call_of_duty.show_preco()
