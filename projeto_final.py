@@ -179,7 +179,6 @@ jogos = {"gta":{"preco":"show_preco", "descricao":"show_descricao"} ,
 
 print()
                       
-
 print(gta.titulo)      
 gta.show_trailer()
 gta.show_poster()
