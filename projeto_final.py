@@ -6,6 +6,7 @@ Created on Wed Apr 20 11:34:01 2016
 """
 
 import webbrowser
+import smtplib
 
 
 class Pagina:
@@ -48,47 +49,68 @@ def show_buscar_jogos():
         gta.show_titulo()
         gta.show_descricao()
         
+        return ("http://www.uzgames.com.br/gta?&utmi_p=_games&utmi_pc=BuscaFullText&utmi_cp=gta")
+        
     elif nomes_jogos == "Mario Bros" or nomes_jogos == "mario bros":
         mario_bros.show_titulo()
         mario_bros.show_descricao()
+        
+        return ("http://www.uzgames.com.br/mario%20bros?&utmi_p=_gta&utmi_pc=BuscaFullText&utmi_cp=mario%20bros")
         
     elif nomes_jogos == "pac man" or nomes_jogos == "Pac Man" or nomes_jogos == "Pac-Man":
         pac_man.show_titulo()
         pac_man.show_descricao()
         
+        return ("http://www.uzgames.com.br/pac%20man?&utmi_p=_gta&utmi_pc=BuscaFullText&utmi_cp=pac%20man")
+        
     elif nomes_jogos == "call of duty" or nomes_jogos == "Call of Duty":
         call_of_duty.show_titulo()
         call_of_duty.show_descricao()
+        
+        return ("http://www.uzgames.com.br/call%20of%20duty%20ghosts?&utmi_p=_call+of+duty+gosth&utmi_pc=BuscaFullText&utmi_cp=call%20of%20duty%20ghosts")
         
     elif nomes_jogos == "battlefield" or nomes_jogos == "Battlefield":
         battlefield.show_titulo()
         battlefield.show_descricao()
         
+        return ("http://www.uzgames.com.br/battlefield%204?&utmi_p=_battlefield4edicaolimitadabrps3_p&utmi_pc=BuscaFullText&utmi_cp=battlefield%204")
+        
     elif nomes_jogos == "Pokemon" or nomes_jogos == "pokemon":
         pokemon.show_titulo()
         pokemon.show_descricao()
+        
+        return ("http://www.uzgames.com.br/pokemon?&utmi_p=_Sistema_buscavazia&utmi_pc=BuscaFullText&utmi_cp=pokemon")
         
     elif nomes_jogos == "fifa" or nomes_jogos == "Fifa":
         fifa.show_titulo()
         fifa.show_descricao()
         
+        return ("http://www.uzgames.com.br/fifa?&utmi_p=_games&utmi_pc=BuscaFullText&utmi_cp=fifa")
+        
     elif nomes_jogos == "Mario Kart" or nomes_jogos == "mario kart":
         mario_kart.show_titulo()
         mario_kart.show_descricao()
         
+        return ("http://www.uzgames.com.br/mario%20kart?&utmi_p=_&utmi_pc=BuscaFullText&utmi_cp=mario%20kart")
+        
     elif nomes_jogos == "need for speed" or nomes_jogos == "Need for Speed":
         need_for_speed.show_titulo()
         need_for_speed.show_descricao()
+
+        return ("http://www.uzgames.com.br/need%20for%20speed?&utmi_p=_mario+kart&utmi_pc=BuscaFullText&utmi_cp=need%20for%20speed")        
         
     elif nomes_jogos == "Street Fighter" or nomes_jogos == "street fighter":
         street_fighter.show_titulo()
         street_fighter.show_descricao()
+        
+        return ("http://www.uzgames.com.br/street%20fighter?&utmi_p=_need+for+speed&utmi_pc=BuscaFullText&utmi_cp=street%20fighter")
         
     else:
         print("Jogo não encontrado!")
             
             
 nomes_jogos = input("Qual o game desejado? ")
+
 
 
 gta = Pagina(True, 
@@ -165,7 +187,7 @@ street_fighter = Pagina(True,
                         "http://www.tecnologia.com.pt/wp-content/uploads/2016/03/Street-Fighter-V.jpg")              
                     
                       
-show_buscar_jogos()
+buscar_jogos = show_buscar_jogos()
 jogos = {"gta":{"preco":"show_preco", "descricao":"show_descricao"} , 
          "mario_bros":{"preco":"show_preco", "descricao":"show_descricao"} , 
          "pac_man":{"preco":"show_preco", "descricao":"show_descricao"} , 
@@ -176,31 +198,51 @@ jogos = {"gta":{"preco":"show_preco", "descricao":"show_descricao"} ,
          "mario_kart":{"preco":"show_preco", "descricao":"show_descricao"},
          "need_for_speed":{"preco":"show_preco", "descricao":"show_descricao"},
          "street_fighter":{"preco":"show_preco", "descricao":"show_descricao"}}
-
+         
+         
 print()
-                      
-print(gta.titulo)      
-gta.show_trailer()
-gta.show_poster()
-gta.show_preco()
+cliente = input("Digite o email cadastrado: ")
 
-print()
 
-print(mario_bros.titulo)
-mario_bros.show_trailer()
-mario_bros.show_poster()
-mario_bros.show_preco()
+fromaddr = "bruno_felipe_gabriel@hotmail.com"
+toaddrs = cliente
 
-print()
+msg = "O melhor site para seu jogo escolhido é: {0}".format(buscar_jogos).encode("UTF-8")
 
-print(pac_man.titulo)
-pac_man.show_trailer()
-pac_man.show_poster()
-pac_man.show_preco()
+print("Message length is", len(msg))
 
-print()
+server = smtplib.SMTP('insper.edu.br')
+server.set_debuglevel(1)
+server.sendmail(fromaddr, toaddrs, msg)
+server.quit()
 
-print(call_of_duty.titulo)
-call_of_duty.show_trailer()
-call_of_duty.show_poster()
-call_of_duty.show_preco()
+
+
+
+#print()
+#                      
+#print(gta.titulo)      
+#gta.show_trailer()
+#gta.show_poster()
+#gta.show_preco()
+#
+#print()
+#
+#print(mario_bros.titulo)
+#mario_bros.show_trailer()
+#mario_bros.show_poster()
+#mario_bros.show_preco()
+#
+#print()
+#
+#print(pac_man.titulo)
+#pac_man.show_trailer()
+#pac_man.show_poster()
+#pac_man.show_preco()
+#
+#print()
+#
+#print(call_of_duty.titulo)
+#call_of_duty.show_trailer()
+#call_of_duty.show_poster()
+#call_of_duty.show_preco()
