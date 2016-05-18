@@ -44,6 +44,7 @@ class Pagina:
         if self.titulo:
             webbrowser.open(self.poster)
             
+            
 def show_buscar_jogos():
     if nomes_jogos == "GTA" or nomes_jogos == "gta":
         gta.show_titulo()
@@ -187,7 +188,7 @@ street_fighter = Pagina(True,
                         "http://www.tecnologia.com.pt/wp-content/uploads/2016/03/Street-Fighter-V.jpg")              
                     
                       
-buscar_jogos = show_buscar_jogos()
+#buscar_jogos = show_buscar_jogos()
          
 jogos = {"gta": gta, 
          "mario bros": mario_bros,
@@ -200,8 +201,10 @@ jogos = {"gta": gta,
          "need for speed": need_for_speed,
          "street fighter": street_fighter}
 
+
 # Abrindo a pagina do jogo desejado
 if nomes_jogos in jogos:
+    jogos[nomes_jogos].show_titulo()
     jogos[nomes_jogos].show_descricao()
 
 
@@ -209,10 +212,10 @@ print()
 cliente = input("Digite o email cadastrado: ")
 
 
-fromaddr = "bruno_felipe_gabriel@hotmail.com"
+fromaddr = "games@nerdnucleus.com"
 toaddrs = cliente
 
-msg = "O melhor site para seu jogo escolhido é: {0}".format(buscar_jogos).encode("UTF-8")
+msg = "O melhor site para seu jogo escolhido é: {0}".format(show_buscar_jogos()).encode("UTF-8")
 
 print("Message length is", len(msg))
 
