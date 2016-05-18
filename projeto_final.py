@@ -45,69 +45,89 @@ class Pagina:
             webbrowser.open(self.poster)
             
             
-def show_buscar_jogos():
-    if nomes_jogos == "GTA" or nomes_jogos == "gta":
-        gta.show_titulo()
-        gta.show_descricao()
+    def show_buscar_jogos(self):
+        if nomes_jogos == "GTA" or nomes_jogos == "gta":
+            gta.show_titulo()
+            gta.show_descricao()
         
-        return ("http://www.uzgames.com.br/gta?&utmi_p=_games&utmi_pc=BuscaFullText&utmi_cp=gta")
+            return ("http://www.uzgames.com.br/gta?&utmi_p=_games&utmi_pc=BuscaFullText&utmi_cp=gta")
         
-    elif nomes_jogos == "Mario Bros" or nomes_jogos == "mario bros":
-        mario_bros.show_titulo()
-        mario_bros.show_descricao()
+        elif nomes_jogos == "Mario Bros" or nomes_jogos == "mario bros":
+            mario_bros.show_titulo()
+            mario_bros.show_descricao()
         
-        return ("http://www.uzgames.com.br/mario%20bros?&utmi_p=_gta&utmi_pc=BuscaFullText&utmi_cp=mario%20bros")
+            return ("http://www.uzgames.com.br/mario%20bros?&utmi_p=_gta&utmi_pc=BuscaFullText&utmi_cp=mario%20bros")
         
-    elif nomes_jogos == "pac man" or nomes_jogos == "Pac Man" or nomes_jogos == "Pac-Man":
-        pac_man.show_titulo()
-        pac_man.show_descricao()
+        elif nomes_jogos == "pac man" or nomes_jogos == "Pac Man" or nomes_jogos == "Pac-Man":
+            pac_man.show_titulo()
+            pac_man.show_descricao()
         
-        return ("http://www.uzgames.com.br/pac%20man?&utmi_p=_gta&utmi_pc=BuscaFullText&utmi_cp=pac%20man")
+            return ("http://www.uzgames.com.br/pac%20man?&utmi_p=_gta&utmi_pc=BuscaFullText&utmi_cp=pac%20man")
         
-    elif nomes_jogos == "call of duty" or nomes_jogos == "Call of Duty":
-        call_of_duty.show_titulo()
-        call_of_duty.show_descricao()
+        elif nomes_jogos == "call of duty" or nomes_jogos == "Call of Duty":
+            call_of_duty.show_titulo()
+            call_of_duty.show_descricao()
         
-        return ("http://www.uzgames.com.br/call%20of%20duty%20ghosts?&utmi_p=_call+of+duty+gosth&utmi_pc=BuscaFullText&utmi_cp=call%20of%20duty%20ghosts")
+            return ("http://www.uzgames.com.br/call%20of%20duty%20ghosts?&utmi_p=_call+of+duty+gosth&utmi_pc=BuscaFullText&utmi_cp=call%20of%20duty%20ghosts")
         
-    elif nomes_jogos == "battlefield" or nomes_jogos == "Battlefield":
-        battlefield.show_titulo()
-        battlefield.show_descricao()
+        elif nomes_jogos == "battlefield" or nomes_jogos == "Battlefield":
+            battlefield.show_titulo()
+            battlefield.show_descricao()
         
-        return ("http://www.uzgames.com.br/battlefield%204?&utmi_p=_battlefield4edicaolimitadabrps3_p&utmi_pc=BuscaFullText&utmi_cp=battlefield%204")
+            return ("http://www.uzgames.com.br/battlefield%204?&utmi_p=_battlefield4edicaolimitadabrps3_p&utmi_pc=BuscaFullText&utmi_cp=battlefield%204")
         
-    elif nomes_jogos == "Pokemon" or nomes_jogos == "pokemon":
-        pokemon.show_titulo()
-        pokemon.show_descricao()
+        elif nomes_jogos == "Pokemon" or nomes_jogos == "pokemon":
+            pokemon.show_titulo()
+            pokemon.show_descricao()
         
-        return ("http://www.uzgames.com.br/pokemon?&utmi_p=_Sistema_buscavazia&utmi_pc=BuscaFullText&utmi_cp=pokemon")
+            return ("http://www.uzgames.com.br/pokemon?&utmi_p=_Sistema_buscavazia&utmi_pc=BuscaFullText&utmi_cp=pokemon")
         
-    elif nomes_jogos == "fifa" or nomes_jogos == "Fifa":
-        fifa.show_titulo()
-        fifa.show_descricao()
+        elif nomes_jogos == "fifa" or nomes_jogos == "Fifa":
+            fifa.show_titulo()
+            fifa.show_descricao()
         
-        return ("http://www.uzgames.com.br/fifa?&utmi_p=_games&utmi_pc=BuscaFullText&utmi_cp=fifa")
+            return ("http://www.uzgames.com.br/fifa?&utmi_p=_games&utmi_pc=BuscaFullText&utmi_cp=fifa")
         
-    elif nomes_jogos == "Mario Kart" or nomes_jogos == "mario kart":
-        mario_kart.show_titulo()
-        mario_kart.show_descricao()
+        elif nomes_jogos == "Mario Kart" or nomes_jogos == "mario kart":
+            mario_kart.show_titulo()
+            mario_kart.show_descricao()
         
-        return ("http://www.uzgames.com.br/mario%20kart?&utmi_p=_&utmi_pc=BuscaFullText&utmi_cp=mario%20kart")
+            return ("http://www.uzgames.com.br/mario%20kart?&utmi_p=_&utmi_pc=BuscaFullText&utmi_cp=mario%20kart")
         
-    elif nomes_jogos == "need for speed" or nomes_jogos == "Need for Speed":
-        need_for_speed.show_titulo()
-        need_for_speed.show_descricao()
+        elif nomes_jogos == "need for speed" or nomes_jogos == "Need for Speed":
+            need_for_speed.show_titulo()
+            need_for_speed.show_descricao()
 
-        return ("http://www.uzgames.com.br/need%20for%20speed?&utmi_p=_mario+kart&utmi_pc=BuscaFullText&utmi_cp=need%20for%20speed")        
+            return ("http://www.uzgames.com.br/need%20for%20speed?&utmi_p=_mario+kart&utmi_pc=BuscaFullText&utmi_cp=need%20for%20speed")        
         
-    elif nomes_jogos == "Street Fighter" or nomes_jogos == "street fighter":
-        street_fighter.show_titulo()
-        street_fighter.show_descricao()
+        elif nomes_jogos == "Street Fighter" or nomes_jogos == "street fighter":
+            street_fighter.show_titulo()
+            street_fighter.show_descricao()
         
-        return ("http://www.uzgames.com.br/street%20fighter?&utmi_p=_need+for+speed&utmi_pc=BuscaFullText&utmi_cp=street%20fighter")
+            return ("http://www.uzgames.com.br/street%20fighter?&utmi_p=_need+for+speed&utmi_pc=BuscaFullText&utmi_cp=street%20fighter")
         
-    else:
-        print("Jogo não encontrado!")
+        else:
+            print("Jogo não encontrado!")
+            
+    def mandar_email(self):
+        if self.games:
+#            cliente = input("Digite o email cadastrado: ")
+    
+    
+            fromaddr = "games@nerdnucleus.com"
+            toaddrs = cliente
+            
+            msg = "O melhor site para seu jogo escolhido é: {0}".format(self.preco).encode("UTF-8")
+            
+            print("Message length is", len(msg))
+            
+            server = smtplib.SMTP('insper.edu.br')
+            server.set_debuglevel(1)
+            server.sendmail(fromaddr, toaddrs, msg)
+            server.quit()
+            print("done!")
+        
+        
             
             
 nomes_jogos = input("Qual o game desejado? ")
@@ -189,8 +209,8 @@ street_fighter = Pagina(True,
                     
                       
 #buscar_jogos = show_buscar_jogos()
-         
-jogos = {"gta": gta, 
+#         
+jogos = {"gta": gta,      
          "mario bros": mario_bros,
          "pac man": pac_man,
          "call of duty": call_of_duty,
@@ -200,58 +220,12 @@ jogos = {"gta": gta,
          "mario kart": mario_kart,
          "need for speed": need_for_speed,
          "street fighter": street_fighter}
-
-
-# Abrindo a pagina do jogo desejado
+    
+    
+    # Abrindo a pagina do jogo desejado
 if nomes_jogos in jogos:
     jogos[nomes_jogos].show_titulo()
     jogos[nomes_jogos].show_descricao()
-
-
-print()
+    
+    
 cliente = input("Digite o email cadastrado: ")
-
-
-fromaddr = "games@nerdnucleus.com"
-toaddrs = cliente
-
-msg = "O melhor site para seu jogo escolhido é: {0}".format(show_buscar_jogos()).encode("UTF-8")
-
-print("Message length is", len(msg))
-
-server = smtplib.SMTP('insper.edu.br')
-server.set_debuglevel(1)
-server.sendmail(fromaddr, toaddrs, msg)
-server.quit()
-print("done!")
-
-
-
-
-#print()
-#                      
-#print(gta.titulo)      
-#gta.show_trailer()
-#gta.show_poster()
-#gta.show_preco()
-#
-#print()
-#
-#print(mario_bros.titulo)
-#mario_bros.show_trailer()
-#mario_bros.show_poster()
-#mario_bros.show_preco()
-#
-#print()
-#
-#print(pac_man.titulo)
-#pac_man.show_trailer()
-#pac_man.show_poster()
-#pac_man.show_preco()
-#
-#print()
-#
-#print(call_of_duty.titulo)
-#call_of_duty.show_trailer()
-#call_of_duty.show_poster()
-#call_of_duty.show_preco()
