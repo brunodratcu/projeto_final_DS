@@ -188,30 +188,23 @@ street_fighter = Pagina(True,
                     
                       
 buscar_jogos = show_buscar_jogos()
-
-jogos = [[[gta], [buscar_jogos]],
-         [[mario_bros], [buscar_jogos]],
-         [[pac_man], [buscar_jogos]],
-         [[call_of_duty], [buscar_jogos]],
-         [[battlefield], [buscar_jogos]],
-         [[pokemon], [buscar_jogos]],
-         [[fifa], [buscar_jogos]],
-         [[mario_kart], [buscar_jogos]],
-         [[need_for_speed], [buscar_jogos]],
-         [[street_fighter], [buscar_jogos]]]
-
-#jogos = {"gta":{"preco":"show_preco", "descricao":"show_descricao"} , 
-#         "mario_bros":{"preco":"show_preco", "descricao":"show_descricao"} , 
-#         "pac_man":{"preco":"show_preco", "descricao":"show_descricao"} , 
-#         "call_of_duty":{"preco":"show_preco", "descricao":"show_descricao"},
-#         "battlefiel":{"preco":"show_preco", "descricao":"show_descricao"},
-#         "pokemon":{"preco":"show_preco", "descricao":"show_descricao"},
-#         "fifa":{"preco":"show_preco", "descricao":"show_descricao"},
-#         "mario_kart":{"preco":"show_preco", "descricao":"show_descricao"},
-#         "need_for_speed":{"preco":"show_preco", "descricao":"show_descricao"},
-#         "street_fighter":{"preco":"show_preco", "descricao":"show_descricao"}}
          
-         
+jogos = {"gta": gta, 
+         "mario bros": mario_bros,
+         "pac man": pac_man,
+         "call of duty": call_of_duty,
+         "battlefield": battlefield,
+         "pokemon": pokemon,
+         "fifa": fifa,
+         "mario kart": mario_kart,
+         "need for speed": need_for_speed,
+         "street fighter": street_fighter}
+
+# Abrindo a pagina do jogo desejado
+if nomes_jogos in jogos:
+    jogos[nomes_jogos].show_descricao()
+
+
 print()
 cliente = input("Digite o email cadastrado: ")
 
