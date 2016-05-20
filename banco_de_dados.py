@@ -218,5 +218,3 @@ class Games:
             self.platform = self.plataformas[self.number_r]
             self.dict_game_info = { "Street Fighter" : {"melhor preco" : self.preco_l, "plataforma" : self.platform, "melhor preco imagem" : self.site_im  , "melhor preco link" : self.site_link, "descrição" : "Grand Theft Auto V, ou simplesmente GTA V, é um jogo de ação."}}
             return self.dict_game_info
-       
-#teste2
