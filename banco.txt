@@ -1,2 +1,7 @@
-"GTA" 100 "UZGAMES" "http://www.uzgames.com.br/jogo-grand-theft-auto-v-br-ps4/p"
-"FIFA" 200 " "STEAM" "http://www.uzgames.com.br/fifa?&utmi_p=_jogo-grand-theft-auto-v-br-ps4_p&utmi_pc=BuscaFullText&utmi_cp=fifa"
+GTA,200,http://goo.gl/eMpVaL,Steam,XBOX
+GTA,500,http://goo.gl/eMpVaL,NUUVEM,
+GTA,1,http://goo.gl/eMpVaL,Steam,PS4
+FIFA,56,http://goo.gl/eMpVaL,Steam,PS3
+FIFA,100,http://goo.gl/eMpVaL,Vapor,PS1
+FIFA,234567,http://goo.gl/eMpVaL,Steam,PS4
+PACMAN,1,http://goo.gl/3DCi6e,Steam,MAC
