@@ -5,227 +5,98 @@ Created on Wed Apr 20 11:34:01 2016
 @author: Bruno Dratcu
 """
 
-import webbrowser
-import smtplib
+from random import randint
+import tkinter as tk
+from PIL import Image, ImageTk
 
-
-class Pagina:
-    """Classe que irá abrir uma pagina para mostrar dados de jogos"""   
+class Games:
     
-    def __init__(self, games, titulo, descricao, preco, trailer, poster):
-        self.games = games
-        self.titulo = titulo
-        self.descricao = descricao
-        self.preco = preco
-        self.trailer = trailer
-        self.poster = poster
-
-    def show_games(self):
-        self.games = True
+    def __init__(self):
         
-    def show_titulo(self):
-        if self.games:
-            print(self.titulo)
         
-    def show_descricao(self):
-        if self.titulo:
-            print(self.descricao)
-            webbrowser.open(self.preco)
+        self.init = tk.Tk()
+        
+        self.G2A = Image.open("Sites/G2A.jpeg") 
+        self.G2A_show = ImageTk.PhotoImage(self.G2A)
+        
+        self.Americanas = Image.open("Sites/americanas.jpg") 
+        self.Americanas_show = ImageTk.PhotoImage(self.Americanas)
+        
+        self.saraiva = Image.open("Sites/saraiva.jpg") 
+        self.saraiva_show = ImageTk.PhotoImage(self.saraiva)
+        
+        self.init.withdraw()
+       
+    def games(self, number):
     
-    def show_preco(self):
-        if self.titulo:
-            webbrowser.open(self.preco)
+        if number == 1:
             
-    def show_trailer(self):
-        if self.titulo:
-            webbrowser.open(self.trailer)
+            self.sites_pictures = [self.Americanas_show, self.saraiva_show, self.G2A_show]        
+            self.precos_games = [122.33,134.91,133.09]
+            self.plataformas = ["PS3","XBOX 360","Rockstar Club"]
+            self.sites_games = ["http://www.americanas.com.br/produto/113150110/game-grand-theft-auto-v-ps3?opn=YSMESP&loja=02&WT.srch=1&epar=bp_pl_00_go_pla-gmjogos-todas","http://www.saraiva.com.br/gta-grand-theft-auto-v-x360-4851893.html?sku=4851893&force_redirect=1&PAC_ID=123134&gclid=CODQw43s6MwCFUsJkQod3d0E2w",
+            "https://www.g2a.com/grand-theft-auto-v-cd-key-global.html?___store=brazil&___currency=BRL&adid=GMC&id=64&gclid=CKCp-ovs6MwCFYaAkQodxv8BLw"]
+            self.number_r = randint(0,2)        
+            self.preco = self.precos_games[self.number_r]
+            self.site_im = self.sites_pictures[self.number_r]
+            self.site_link = self.sites_games[self.number_r]
+            self.preco_l = "R${0}".format(self.preco)
+            self.inter = self.preco_l.split(".", 2)    
+            self.price = "{0},{1}".format(self.inter[0], self.inter[1])
+            self.platform = self.plataformas[self.number_r]
+            self.dict_game_info = { "Grand Theft Auto V" : {"melhor preco" : self.preco_l, "plataforma" : self.platform, "melhor preco imagem" : self.site_im  , "melhor preco link" : self.site_link, "descrição" : "Grand Theft Auto V, ou simplesmente GTA V, é um jogo de ação."}}
+            return self.dict_game_info
+        
+        elif number == 2:
             
-    def show_poster(self):
-        if self.titulo:
-            webbrowser.open(self.poster)
+            self.sites_pictures = [self.Americanas_show, self.saraiva_show, self.G2A_show]        
+            self.precos_games = [158.33,206.91,118.12]
+            self.plataformas = ["XBOX ONE","XBOX ONE","Steam"]
+            self.sites_games = ["http://www.americanas.com.br/produto/124606848/game-call-of-duty-black-ops-3-xbox-one?opn=YSMESP&loja=02&WT.srch=1&epar=bp_pl_00_go_pla-gmjogos-todas","http://www.saraiva.com.br/call-of-duty-black-ops-iii-xbox-one-9201680.html?sku=9201680&force_redirect=1&PAC_ID=123134&gclid=COnL6_z86MwCFcQIkQodhAACHg",
+            "https://www.g2a.com/call-of-duty-black-ops-iii-steam-cd-key-preorder-global.html?___store=brazil&___currency=BRL&adid=GMC&id=64&gclid=CITMnNn86MwCFYIGkQodApgIbw"]
+            self.number_r = randint(0,2)        
+            self.preco = self.precos_games[self.number_r]
+            self.site_im = self.sites_pictures[self.number_r]
+            self.site_link = self.sites_games[self.number_r]
+            self.preco_l = "R${0}".format(self.preco)
+            self.inter = self.preco_l.split(".", 2)    
+            self.price = "{0},{1}".format(self.inter[0], self.inter[1])
+            self.platform = self.plataformas[self.number_r]
+            self.dict_game_info = { "Call of Duty Black Ops 3" : {"melhor preco" : self.preco_l, "plataforma" : self.platform, "melhor preco imagem" : self.site_im  , "melhor preco link" : self.site_link, "descrição" : "Grand Theft Auto V, ou simplesmente GTA V, é um jogo de ação."}}
+            return self.dict_game_info
+       
+        elif number == 3:
             
+            self.sites_pictures = [self.Americanas_show, self.saraiva_show, self.G2A_show]        
+            self.precos_games = [158.33,206.91,118.12]
+            self.plataformas = ["XBOX ONE","XBOX ONE","Steam"]
+            self.sites_games = ["http://www.americanas.com.br/produto/124606848/game-call-of-duty-black-ops-3-xbox-one?opn=YSMESP&loja=02&WT.srch=1&epar=bp_pl_00_go_pla-gmjogos-todas","http://www.saraiva.com.br/call-of-duty-black-ops-iii-xbox-one-9201680.html?sku=9201680&force_redirect=1&PAC_ID=123134&gclid=COnL6_z86MwCFcQIkQodhAACHg",
+            "https://www.g2a.com/call-of-duty-black-ops-iii-steam-cd-key-preorder-global.html?___store=brazil&___currency=BRL&adid=GMC&id=64&gclid=CITMnNn86MwCFYIGkQodApgIbw"]
+            self.number_r = randint(0,2)        
+            self.preco = self.precos_games[self.number_r]
+            self.site_im = self.sites_pictures[self.number_r]
+            self.site_link = self.sites_games[self.number_r]
+            self.preco_l = "R${0}".format(self.preco)
+            self.inter = self.preco_l.split(".", 2)    
+            self.price = "{0},{1}".format(self.inter[0], self.inter[1])
+            self.platform = self.plataformas[self.number_r]
+            self.dict_game_info = { "Call of Duty Black Ops 3" : {"melhor preco" : self.preco_l, "plataforma" : self.platform, "melhor preco imagem" : self.site_im  , "melhor preco link" : self.site_link, "descrição" : "Grand Theft Auto V, ou simplesmente GTA V, é um jogo de ação."}}
+            return self.dict_game_info     
+       
+        elif number == 4:
             
-    def show_buscar_jogos(self):
-        if nomes_jogos == "GTA" or nomes_jogos == "gta":
-            gta.show_titulo()
-            gta.show_descricao()
-        
-            return ("http://www.uzgames.com.br/gta?&utmi_p=_games&utmi_pc=BuscaFullText&utmi_cp=gta")
-        
-        elif nomes_jogos == "Mario Bros" or nomes_jogos == "mario bros":
-            mario_bros.show_titulo()
-            mario_bros.show_descricao()
-        
-            return ("http://www.uzgames.com.br/mario%20bros?&utmi_p=_gta&utmi_pc=BuscaFullText&utmi_cp=mario%20bros")
-        
-        elif nomes_jogos == "pac man" or nomes_jogos == "Pac Man" or nomes_jogos == "Pac-Man":
-            pac_man.show_titulo()
-            pac_man.show_descricao()
-        
-            return ("http://www.uzgames.com.br/pac%20man?&utmi_p=_gta&utmi_pc=BuscaFullText&utmi_cp=pac%20man")
-        
-        elif nomes_jogos == "call of duty" or nomes_jogos == "Call of Duty":
-            call_of_duty.show_titulo()
-            call_of_duty.show_descricao()
-        
-            return ("http://www.uzgames.com.br/call%20of%20duty%20ghosts?&utmi_p=_call+of+duty+gosth&utmi_pc=BuscaFullText&utmi_cp=call%20of%20duty%20ghosts")
-        
-        elif nomes_jogos == "battlefield" or nomes_jogos == "Battlefield":
-            battlefield.show_titulo()
-            battlefield.show_descricao()
-        
-            return ("http://www.uzgames.com.br/battlefield%204?&utmi_p=_battlefield4edicaolimitadabrps3_p&utmi_pc=BuscaFullText&utmi_cp=battlefield%204")
-        
-        elif nomes_jogos == "Pokemon" or nomes_jogos == "pokemon":
-            pokemon.show_titulo()
-            pokemon.show_descricao()
-        
-            return ("http://www.uzgames.com.br/pokemon?&utmi_p=_Sistema_buscavazia&utmi_pc=BuscaFullText&utmi_cp=pokemon")
-        
-        elif nomes_jogos == "fifa" or nomes_jogos == "Fifa":
-            fifa.show_titulo()
-            fifa.show_descricao()
-        
-            return ("http://www.uzgames.com.br/fifa?&utmi_p=_games&utmi_pc=BuscaFullText&utmi_cp=fifa")
-        
-        elif nomes_jogos == "Mario Kart" or nomes_jogos == "mario kart":
-            mario_kart.show_titulo()
-            mario_kart.show_descricao()
-        
-            return ("http://www.uzgames.com.br/mario%20kart?&utmi_p=_&utmi_pc=BuscaFullText&utmi_cp=mario%20kart")
-        
-        elif nomes_jogos == "need for speed" or nomes_jogos == "Need for Speed":
-            need_for_speed.show_titulo()
-            need_for_speed.show_descricao()
-
-            return ("http://www.uzgames.com.br/need%20for%20speed?&utmi_p=_mario+kart&utmi_pc=BuscaFullText&utmi_cp=need%20for%20speed")        
-        
-        elif nomes_jogos == "Street Fighter" or nomes_jogos == "street fighter":
-            street_fighter.show_titulo()
-            street_fighter.show_descricao()
-        
-            return ("http://www.uzgames.com.br/street%20fighter?&utmi_p=_need+for+speed&utmi_pc=BuscaFullText&utmi_cp=street%20fighter")
-        
-        else:
-            print("Jogo não encontrado!")
-            
-    def mandar_email(self):
-        if self.games:
-#            cliente = input("Digite o email cadastrado: ")
-    
-    
-            fromaddr = "games@nerdnucleus.com"
-            toaddrs = cliente
-            
-            msg = "O melhor site para seu jogo escolhido é: {0}".format(self.preco).encode("UTF-8")
-            
-            print("Message length is", len(msg))
-            
-            server = smtplib.SMTP('insper.edu.br')
-            server.set_debuglevel(1)
-            server.sendmail(fromaddr, toaddrs, msg)
-            server.quit()
-            print("done!")
-        
-        
-            
-            
-nomes_jogos = input("Qual o game desejado? ")
-
-
-
-gta = Pagina(True, 
-             "GTA V", 
-             "Jogo de um maniaco que mata todo mundo", 
-             "http://www.uzgames.com.br/gta?&utmi_p=_games&utmi_pc=BuscaFullText&utmi_cp=gta", 
-             "https://www.youtube.com/watch?v=VjZ5tgjPVfU", 
-             "http://cdn.atl.clicrbs.com.br/wp-content/uploads/sites/27/2015/04/actual_1410520494.jpg")
-
-mario_bros = Pagina(True,
-                    "Super Mario Bros",
-                    "Jogo de um encanador psicodelico", 
-                    "http://www.uzgames.com.br/mario%20bros?&utmi_p=_gta&utmi_pc=BuscaFullText&utmi_cp=mario%20bros",
-                    "https://www.youtube.com/watch?v=eO8xe2AUY4c",
-                    "https://i.ytimg.com/vi/1dhrHlol3SM/maxresdefault.jpg")
-                    
-pac_man = Pagina(True,
-                 "Pac-Man",
-                 "Bolinha amarela que fica numa sala escura e quando come um doce tem poderes para comer fantasmas",
-                 "http://www.uzgames.com.br/pac%20man?&utmi_p=_gta&utmi_pc=BuscaFullText&utmi_cp=pac%20man",
-                 "https://www.youtube.com/watch?v=CFWnTu_42d0",
-                 "http://www.redefonte.com/wp-content/uploads/2013/06/Pacman-Online.jpg")
-                 
-call_of_duty = Pagina(True,
-                      "Call of Duty",
-                      "Jogo no qual vc pode atirar em outros usuarios online",
-                      "http://www.uzgames.com.br/call%20of%20duty%20ghosts?&utmi_p=_call+of+duty+gosth&utmi_pc=BuscaFullText&utmi_cp=call%20of%20duty%20ghosts",
-                      "https://www.youtube.com/watch?v=ktz5G24BOsg",
-                      "http://cdn2-www.comingsoon.net/assets/uploads/2015/04/cod-bo3-header2.jpg")
-  
-
-battlefield = Pagina(True,
-                     "Battlefield 4",
-                     "Jogo de guerra e tiros",
-                     "http://www.uzgames.com.br/battlefield%204?&utmi_p=_battlefield4edicaolimitadabrps3_p&utmi_pc=BuscaFullText&utmi_cp=battlefield%204",
-                     "https://www.youtube.com/watch?v=sclTMEd7JN8",
-                     "http://static1.gamespot.com/uploads/screen_kubrick/398/3983642/2358171-nowplaying_battlefield4_release_20131029.jpg")
-                    
-                    
-pokemon = Pagina(True,
-                 "Pokemon",
-                 "Jogo de 'pets' com poderes que são guardados dentro de bolinhas para batalhas",
-                 "http://www.uzgames.com.br/pokemon?&utmi_p=_Sistema_buscavazia&utmi_pc=BuscaFullText&utmi_cp=pokemon",
-                 "https://www.youtube.com/watch?v=TexwX1bBViI",
-                 "https://i.ytimg.com/vi/RpFxf3b_u8A/maxresdefault.jpg")   
-
-
-fifa = Pagina(True,
-              "Fifa 2016",
-              "Jogo de futebol famoso",
-              "http://www.uzgames.com.br/fifa?&utmi_p=_games&utmi_pc=BuscaFullText&utmi_cp=fifa",
-              "https://www.youtube.com/watch?v=ItKkL4UFVOg",
-              "http://upgeek.com.br/wp-content/uploads/2015/09/fifa-16.jpg")
-
-need_for_speed = Pagina(True,
-                        "Need for Speed",
-                        "Jogo de corrida muito realista",
-                        "http://www.uzgames.com.br/need%20for%20speed?&utmi_p=_mario+kart&utmi_pc=BuscaFullText&utmi_cp=need%20for%20speed",
-                        "https://www.youtube.com/watch?v=fsrJWUVoXeM",
-                        "http://tryangle.com.br/wp-content/uploads/2015/09/need_for_speed.jpg")   
-
-mario_kart = Pagina(True,
-                    "Mario Kart",
-                    "Jogo do encanador psicodelico de corrida",
-                    "http://www.uzgames.com.br/mario%20kart?&utmi_p=_&utmi_pc=BuscaFullText&utmi_cp=mario%20kart",
-                    "https://www.youtube.com/watch?v=gG1ex0AAU5c",
-                    "http://images.123hdwallpapers.com/20150513/mario-kart-backgrounds-1280x720.jpg")
-
-street_fighter = Pagina(True,
-                        "Stree Fighter",
-                        "Jogo de luta antigo com personagens malucos",
-                        "http://www.uzgames.com.br/street%20fighter?&utmi_p=_need+for+speed&utmi_pc=BuscaFullText&utmi_cp=street%20fighter",
-                        "https://www.youtube.com/watch?v=yveLaWgBTdk",
-                        "http://www.tecnologia.com.pt/wp-content/uploads/2016/03/Street-Fighter-V.jpg")              
-                    
-                      
-#buscar_jogos = show_buscar_jogos()
-#         
-jogos = {"gta": gta,      
-         "mario bros": mario_bros,
-         "pac man": pac_man,
-         "call of duty": call_of_duty,
-         "battlefield": battlefield,
-         "pokemon": pokemon,
-         "fifa": fifa,
-         "mario kart": mario_kart,
-         "need for speed": need_for_speed,
-         "street fighter": street_fighter}
-    
-    
-    # Abrindo a pagina do jogo desejado
-if nomes_jogos in jogos:
-    jogos[nomes_jogos].show_titulo()
-    jogos[nomes_jogos].show_descricao()
-    
-    
-cliente = input("Digite o email cadastrado: ")
+            self.sites_pictures = [self.Americanas_show, self.saraiva_show, self.G2A_show]        
+            self.precos_games = [158,33,206.91,118.12]
+            self.plataformas = ["XBOX ONE","XBOX ONE","Steam"]
+            self.sites_games = ["http://www.americanas.com.br/produto/124606848/game-call-of-duty-black-ops-3-xbox-one?opn=YSMESP&loja=02&WT.srch=1&epar=bp_pl_00_go_pla-gmjogos-todas","http://www.saraiva.com.br/call-of-duty-black-ops-iii-xbox-one-9201680.html?sku=9201680&force_redirect=1&PAC_ID=123134&gclid=COnL6_z86MwCFcQIkQodhAACHg",
+            "https://www.g2a.com/call-of-duty-black-ops-iii-steam-cd-key-preorder-global.html?___store=brazil&___currency=BRL&adid=GMC&id=64&gclid=CITMnNn86MwCFYIGkQodApgIbw"]
+            self.number_r = randint(0,2)        
+            self.preco = self.precos_games[self.number_r]
+            self.site_im = self.sites_pictures[self.number_r]
+            self.site_link = self.sites_games[self.number_r]
+            self.preco_l = "R${0}".format(self.preco)
+            self.inter = self.preco_l.split(".", 2)    
+            self.price = "{0},{1}".format(self.inter[0], self.inter[1])
+            self.platform = self.plataformas[self.number_r]
+            self.dict_game_info = { "Call of Duty Black Ops 3" : {"melhor preco" : self.preco_l, "plataforma" : self.platform, "melhor preco imagem" : self.site_im  , "melhor preco link" : self.site_link, "descrição" : "Grand Theft Auto V, ou simplesmente GTA V, é um jogo de ação."}}
+            return self.dict_game_info     
