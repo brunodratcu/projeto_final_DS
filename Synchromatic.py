@@ -185,12 +185,14 @@ class Main_Window:
         self.Voltar_button.place_forget()
         self.Label_error.place_forget()
         self.email.set("")
-        self.Label_nome_2.configure(text="Digite o seu email no campo abaixo para receber um email com a sua nova senha", font = "Helvetica 8", width = 20)        
-        self.Label_nome_2.place(x = 300, y = 132)
+        self.Label_nome_2.configure(text="Digite o seu email no campo abaixo para receber um email com a sua nova senha", font = "Helvetica 8", width = 80)        
+        self.Label_nome_2.place(x = 100, y = 132)
         self.Textbox_2.configure(textvariable=self.email, font = "Helvetica 20", show = "")
         self.Textbox_2.place(x = 200, y= 250)       
         self.Login_button.configure(text="Mandar email", height = 3, width = 19, command = self.Checar_email)              
         self.Login_button.place(x = 250, y = 500)
+        self.Voltar_button = tk.Button(self.core,text="Voltar", fg = "green2", bg = "black", height = 3, width = 19, command = lambda n=100: self.erase_labels(n))              
+        self.Voltar_button.place(x = 250, y = 580)  
     
     def Checar_email(self):
       
@@ -208,10 +210,10 @@ class Main_Window:
                    self.new_pass = first + second + third + fourth + fifth + sixth + seventh + eighth + ninth
                    self.Email_gen.reset_senha(self.email.get(), self.new_pass)
                    self.meus_cadastros[pessoas]["senha"] = self.new_pass
-                   self.database = open("cadastros.data", "rb")
-                   self.meus_cadastros = pickle.load(self.database)
+                   self.database = open("cadastros.data", "wb")
+                   pickle.dump(self.meus_cadastros,self.database)     
                    self.database.close()
-                   self.Load_account()
+                   self.Login_screen()
        self.Label_error.configure(text="Esse email não está vinculado a uma conta.")                
        self.Label_error.place(x = 100, y = 430)       
         
@@ -370,7 +372,6 @@ class Main_Window:
             for i in range(0,9):            
                 self.gaming_list[i].place_forget()  
             self.Games_entry.place_forget()
-            self.Pesqui_av.place_forget()   
                 
         elif self.var == 5:  
             
@@ -392,8 +393,7 @@ class Main_Window:
             self.n_games = len(self.meus_cadastros[self.Login_var_temp]["jogos"])
             for i in range(self.n_games):                                         
                 self.favorite_list[i].place_forget()
-            self.Games_entry.place_forget()
-            self.Pesqui_av.place_forget()      
+            self.Games_entry.place_forget()      
         
         elif self.var == 7:
             
@@ -408,7 +408,6 @@ class Main_Window:
             for i in range(len(self.found_games)):            
                 self.found_games[i].place_forget()  
             self.Games_entry.place_forget()
-            self.Pesqui_av.place_forget() 
         
         if numero == 0:
             self.main_screen()
@@ -518,9 +517,6 @@ class Main_Window:
             self.game_var = tk.Button(self.core, bg = "black", height = 100, width = 100 ,image = self.actual[self.var_str]["button"], command = lambda n = self.var_erasing: self.erase_labels(n))
             self.game_var.place(x = i*140 + 225 - (i//3)*420 , y = (i//3)*120 + 200)
             self.found_games.append(self.game_var)        
-        
-        #self.Pesqui_av= tk.Button(self.core, bg = "black",  fg = "green2", text = "Pesquisa Avançada" , height = 2, width = 56, command = lambda n=4: self.access_games(n))              
-        #self.Pesqui_av.place(x = 219, y = 60) 
         
         self.Games_entry = tk.Entry(self.core, width = 30, bg = "black", fg= "green2", textvariable=self.game_entry ,font = "Helvetica 18")
         self.Games_entry.bind("<Return>", self.pesquisa)           
@@ -733,8 +729,8 @@ class Main_Window:
         pickle.dump(self.meus_cadastros,self.database)
         print(self.meus_cadastros)        
         self.database.close()
-        #self.email_timer = Timer(self.Email_gen.secs, self.Email_gen.mandar_email(self.Email_var_temp, self.gta_site))
-        #self.email_timer.start()
+        self.char = str(self.game_ID)
+        self.email_timer = self.Email_gen.mandar_email(self.Email_var_temp, self.actual[self.char]["melhor preco link"])
         self.FAV.place_forget()
         self.FAV = tk.Button(self.core, bg = "black", image = self.fav , height = 50, width = 50, command = lambda n=game_id: self.des_favorite(n))              
         self.FAV.place(x = 499, y = 507)         
