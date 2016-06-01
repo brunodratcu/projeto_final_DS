@@ -1,4 +1,4 @@
-# -*- coding: utf-8 -*-
+#  -*- coding: utf-8 -*-
 """
 Created on Wed May 18 18:16:49 2016
 
@@ -27,7 +27,7 @@ class create_email:
                self.msg = "Obrigado por utilizar o Synchromatic.\
                Hoje, dada a sua escolha de jogo, o melhor site para a compra do seu jogo favorito é: {0}".format(site).encode("UTF-8")
             
-               self.server = smtplib.SMTP('mail.nerdnucleus.com')
+               self.server = smtplib.SMTP("insper.edu.br")
                self.server.set_debuglevel(1)
                self.server.sendmail(self.fromaddr, self.toaddrs, self.msg)
                self.server.quit()    
@@ -40,7 +40,7 @@ class create_email:
                self.msg = "Obrigado por utilizar o Synchromatic.\
                A sua nova senha é {0}. Caso queira alterar ela, use o botão alterar senha na aba Minha Conta.".format(senha).encode("UTF-8")
             
-               self.server = smtplib.SMTP('mail.nerdnucleus.com')
+               self.server = smtplib.SMTP('insper.edu.br')
                self.server.set_debuglevel(1)
                self.server.sendmail(self.fromaddr, self.toaddrs, self.msg)
                self.server.quit()    
