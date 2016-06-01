@@ -49,9 +49,6 @@ class Main_Window:
         
         self.avatar_im = Image.open("Images/Login_avatar.jpg")     
         self.avatar_im_show = ImageTk.PhotoImage(self.avatar_im)
-        
-        self.default_im = Image.open("Images/defaultavatar.jpg")     
-        self.default = ImageTk.PhotoImage(self.default_im)
  
         self.fav_im = Image.open("Images/Favorite.png")
         self.fav = ImageTk.PhotoImage(self.fav_im)
