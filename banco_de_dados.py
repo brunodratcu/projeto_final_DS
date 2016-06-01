@@ -273,4 +273,6 @@ class Games:
             self.button_SFV_im = Image.open("Images/SFV_Button.jpg")     
             self.button_SFV_show = ImageTk.PhotoImage(self.button_SFV_im)
             self.dict_game_info = { self.game_ID : {"nome": "Street Fighter V", "short":"SFV", "melhor preco" : self.price, "plataforma" : self.platform_ind, "melhor preco imagem" : self.site_im  , "melhor preco link" : self.site_link, "descrição" : "Grand Theft Auto V, ou simplesmente GTA V, é um jogo de ação.", "poster" : self.poster_SFV_show, "button": self.button_SFV_show}}
-            return self.dict_game_info     
+            return self.dict_game_info
+
+    
