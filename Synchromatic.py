@@ -6,28 +6,15 @@ Created on Fri Apr 29 14:13:19 2016
 @author: Gabriel
 """
 
-#ferramentas de pesquisa
-#aumentar database de jogos
-#terminar modo visualização
-#implementar os botões que faltam
-#sistema de acheivement
-#suporte para línguas
-#firebase ou json
-#parsing
-#amigos
-#messenger
-#esqueci minha senha
-
-
 import tkinter as tk
 import pickle
 import webbrowser
 import Email_Generator
 import banco_de_dados
 import Pesquisa
-from threading import Timer
 from PIL import Image, ImageTk
 import random
+import string
 
 class Main_Window:
     
@@ -38,7 +25,7 @@ class Main_Window:
         self.core.title("Synchromatic")
         self.core.geometry("650x670")
         
-        #self.Email_gen = Email_Generator.create_email()
+        self.Email_gen = Email_Generator.create_email()
         
         self.image1 = Image.open("Images/Main_Button.jpg")     
         self.init = ImageTk.PhotoImage(self.image1)
@@ -99,6 +86,9 @@ class Main_Window:
         self.avatar_4_im = Image.open("Images/Yoda.png")
         self.avatar_4 = ImageTk.PhotoImage(self.avatar_4_im) 
         
+        self.avatar_sel_im = Image.open("Images/Avatar_select.png")
+        self.avatar_sel = ImageTk.PhotoImage(self.avatar_sel_im)
+        
         self.left_im = Image.open("Images/Button_left.png")
         self.left = ImageTk.PhotoImage(self.left_im) 
         
@@ -136,6 +126,9 @@ class Main_Window:
         self.Main_BG.grid(row=0, column=0, columnspan=8, rowspan = 15 ,sticky="nsew") 
         self.Button_Main = tk.Button(self.core,image=self.init, bg = "black", width = 130, height = 120,command = self.Begin)
         self.Button_Main.place(x = 256, y = 230) 
+        self.database = open("cadastros.data", "rb")
+        self.meus_cadastros = pickle.load(self.database)
+        self.database.close()
                 
     def Begin(self):
         self.Button_Main.grid_forget()        
@@ -178,7 +171,7 @@ class Main_Window:
         self.Login_button = tk.Button(self.core,text="Entrar", fg = "green2", bg = "black", height = 3, width = 19, command = self.Login_command)              
         self.Login_button.place(x = 250, y = 500)
         
-        self.esqueci_button = tk.Button(self.core,text="Esqueci minha senha", fg = "green2", bg = "black", height = 3, width = 19, command = self.Login_command)              
+        self.esqueci_button = tk.Button(self.core,text="Esqueci minha senha", fg = "green2", bg = "black", height = 3, width = 19, command = self.Esqueci_minha_senha)              
         self.esqueci_button.place(x = 340, y = 580)  
         
         self.Voltar_button = tk.Button(self.core,text="Voltar", fg = "green2", bg = "black", height = 3, width = 19, command = lambda n=100: self.erase_labels(n))              
@@ -186,14 +179,49 @@ class Main_Window:
 
         self.Label_error = tk.Label(self.core, font = "Helvetica", fg = "green2", bg = "black")        
         self.Label_error.place(x = 100, y = 430)        
+    
+    def Esqueci_minha_senha(self):
+        
+        self.Textbox_1.place_forget()
+        self.Label_nome_1.place_forget()
+        self.esqueci_button.place_forget()
+        self.Voltar_button.place_forget()
+        self.Label_error.place_forget()
+        self.email.set("")
+        self.Label_nome_2.configure(text="Digite o seu email no campo abaixo para receber um email com a sua nova senha", font = "Helvetica 8", width = 20)        
+        self.Label_nome_2.place(x = 300, y = 132)
+        self.Textbox_2.configure(textvariable=self.email, font = "Helvetica 20", show = "")
+        self.Textbox_2.place(x = 200, y= 250)       
+        self.Login_button.configure(text="Mandar email", height = 3, width = 19, command = self.Checar_email)              
+        self.Login_button.place(x = 250, y = 500)
+    
+    def Checar_email(self):
+      
+       for pessoas in self.meus_cadastros:
+               if self.meus_cadastros[pessoas]["email"] == self.email.get():
+                   first = str(random.randint(0,9))
+                   second = random.choice(string.ascii_letters)
+                   third = str(random.randint(0,9))
+                   fourth =  random.choice(string.ascii_letters)
+                   fifth = str(random.randint(0,9))
+                   sixth = str(random.randint(0,9))
+                   seventh = str(random.randint(0,9))
+                   eighth =  random.choice(string.ascii_letters)
+                   ninth =  random.choice(string.ascii_letters)
+                   self.new_pass = first + second + third + fourth + fifth + sixth + seventh + eighth + ninth
+                   self.Email_gen.reset_senha(self.email.get(), self.new_pass)
+                   self.meus_cadastros[pessoas]["senha"] = self.new_pass
+                   self.database = open("cadastros.data", "rb")
+                   self.meus_cadastros = pickle.load(self.database)
+                   self.database.close()
+                   self.Load_account()
+       self.Label_error.configure(text="Esse email não está vinculado a uma conta.")                
+       self.Label_error.place(x = 100, y = 430)       
         
     def Login_command(self):       
                   
         self.Login_var_temp = self.Login.get()
         self.Senha_var_temp = self.Senha.get()
-        self.database = open("cadastros.data", "rb")
-        self.meus_cadastros = pickle.load(self.database)
-        self.database.close()
         if self.Login_var_temp in self.meus_cadastros:
             if self.meus_cadastros.get(self.Login_var_temp)["senha"] == self.Senha_var_temp:
                 self.Usuario_var_temp = self.meus_cadastros[self.Login_var_temp]["username"]         
@@ -460,8 +488,8 @@ class Main_Window:
             self.game_var.place(x = i*140 + 225 - (i//3)*420 , y = (i//3)*120 + 200)
             self.gaming_list.append(self.game_var)        
         
-        self.Pesqui_av= tk.Button(self.core, bg = "black",  fg = "green2", text = "Pesquisa Avançada" , height = 2, width = 56, command = lambda n=4: self.access_games(n))              
-        self.Pesqui_av.place(x = 219, y = 60) 
+        #self.Pesqui_av= tk.Button(self.core, bg = "black",  fg = "green2", text = "Pesquisa Avançada" , height = 2, width = 56, command = lambda n=4: self.access_games(n))              
+        #self.Pesqui_av.place(x = 219, y = 60) 
         
         self.Games_entry = tk.Entry(self.core, width = 30, bg = "black", fg= "green2", textvariable=self.game_entry ,font = "Helvetica 18")
         self.Games_entry.bind("<Return>", self.pesquisa)           
@@ -494,8 +522,8 @@ class Main_Window:
             self.game_var.place(x = i*140 + 225 - (i//3)*420 , y = (i//3)*120 + 200)
             self.found_games.append(self.game_var)        
         
-        self.Pesqui_av= tk.Button(self.core, bg = "black",  fg = "green2", text = "Pesquisa Avançada" , height = 2, width = 56, command = lambda n=4: self.access_games(n))              
-        self.Pesqui_av.place(x = 219, y = 60) 
+        #self.Pesqui_av= tk.Button(self.core, bg = "black",  fg = "green2", text = "Pesquisa Avançada" , height = 2, width = 56, command = lambda n=4: self.access_games(n))              
+        #self.Pesqui_av.place(x = 219, y = 60) 
         
         self.Games_entry = tk.Entry(self.core, width = 30, bg = "black", fg= "green2", textvariable=self.game_entry ,font = "Helvetica 18")
         self.Games_entry.bind("<Return>", self.pesquisa)           
@@ -532,7 +560,7 @@ class Main_Window:
         self.alterar_usuario = tk.Button(self.core, bg = "black", image = self.alterar, width = 100, command = lambda n=2: self.alterar_dados(n))              
         self.alterar_usuario.place(x = 509, y = 405)
         
-        self.alterar_avatar = tk.Button(self.core, bg = "black",  image = self.alterar, width = 135, height = 120,  command = lambda n=4: self.alterar_dados(n))              
+        self.alterar_avatar = tk.Button(self.core, bg = "black",  image = self.avatar_sel, width = 135, height = 120,  command = lambda n=4: self.alterar_dados(n))              
         self.alterar_avatar.place(x = 345, y = 118)        
         
         self.alterar_email = tk.Button(self.core, bg = "black",  image = self.alterar, width = 100, command = lambda n=1: self.alterar_dados(n))              
@@ -612,10 +640,10 @@ class Main_Window:
             self.choice_ind += 1
         
         if self.choice_ind < 0:
-            self.choice_ind += 4
+            self.choice_ind += 5
 
-        elif self.choice_ind > 3:
-            self.choice_ind -= 4 
+        elif self.choice_ind > 4:
+            self.choice_ind -= 5 
             
         self.alterar_avatar_photo.configure(image = self.avatar_var[self.choice_ind])             
  
@@ -685,8 +713,8 @@ class Main_Window:
         self.BG = tk.Label(self.core, bg = "black", image = self.My_Fav) 
         self.BG.grid(row=0, column=0, columnspan = 8, rowspan = 16, sticky="nsew")                  
         self.main_buttons()        
-        self.Pesqui_av= tk.Button(self.core, bg = "black",  fg = "green2", text = "Pesquisa Avançada" , height = 2, width = 56, command = lambda n=4: self.access_games(n))              
-        self.Pesqui_av.place(x = 219, y = 60) 
+        #self.Pesqui_av= tk.Button(self.core, bg = "black",  fg = "green2", text = "Pesquisa Avançada" , height = 2, width = 56, command = lambda n=4: self.access_games(n))              
+        #self.Pesqui_av.place(x = 219, y = 60) 
         self.Games_entry = tk.Entry(self.core, width = 30, bg = "black", fg= "green2", textvariable=self.game_entry ,font = "Helvetica 18")
         self.Games_entry.bind("<Return>", self.pesquisa)           
         self.Games_entry.place(x = 220, y = 19)             
@@ -767,7 +795,7 @@ class Main_Window:
         self.plataforma = tk.Label(self.core, bg = "black", fg = "green2", image = self.actual[self.game_ID]["plataforma"], height = 30, width = 60)  
         self.plataforma.place(x = 385, y = 544)
         
-        self.Melhor_preço = tk.Button(self.core, bg = "black", image = self.actual[self.game_ID]["melhor preco imagem"], height = 40, width = 130, command = lambda n= 1: self.site(1))
+        self.Melhor_preço = tk.Button(self.core, bg = "black", image = self.actual[self.game_ID]["melhor preco imagem"], height = 40, width = 130, command = lambda n= self.game_ID: self.site(self.game_ID))
         self.Melhor_preço.place(x = 470, y = 590)        
 
 
@@ -780,14 +808,8 @@ class Main_Window:
             
         
     def site(self, jogo):
-        if jogo == 1:
-            webbrowser.open(self.actual["Grand Theft Auto V"]["melhor preco link"])
-        elif jogo == 2:
-            webbrowser.open(self.actual["Call of Duty Black Ops 3"]["melhor preco link"])
-        elif jogo == 3:
-            webbrowser.open("http://www.uzgames.com.br/mario%20bros?&utmi_p=_gta&utmi_pc=BuscaFullText&utmi_cp=mario%20bros")
-        elif jogo == 4:
-            webbrowser.open("http://www.uzgames.com.br/pac%20man?&utmi_p=_gta&utmi_pc=BuscaFullText&utmi_cp=pac%20man")
+            webbrowser.open(self.actual[jogo]["melhor preco link"])
+            
     def loop(self):
         self.core.mainloop()
 
